@@ -1,0 +1,56 @@
+import java.applet.*; 
+import java.awt.*; 
+import java.awt.event.*;
+public class MouseEvents extends Applet implements MouseListener, MouseMotionListener
+{
+String msg = " ";
+int x,y,mousex = 0,mousey = 0;
+public void init()
+{
+addMouseListener(this); 
+addMouseMotionListener(this); }
+public void mousePressed(MouseEvent me) { 
+x=50;
+y=100;
+msg="mouse Pressed"; 
+repaint();
+}
+public void mouseClicked(MouseEvent me) {
+x=50; 
+y=100;
+msg="mouse Clicked"; 
+repaint();
+}
+public void mouseExited(MouseEvent me) { 
+x=50; y=100;
+msg="mouse Exited"; 
+repaint();
+}
+public void mouseReleased(MouseEvent me) { 
+x=50; y=100;
+msg="Mouse Released"; 
+repaint();
+}
+public void mouseEntered(MouseEvent me) { 
+x=50;
+y=100;
+msg="mouse Entered"; 
+repaint();
+}
+public void mouseDragged(MouseEvent me) { 
+msg="";
+showStatus("Dragged at"+me.getX()+","+me.getY()); 
+repaint();
+}
+public void mouseMoved(MouseEvent me) { 
+showStatus("Moved at"+me.getX()+","+me.getY()); 
+repaint();
+}
+public void paint(Graphics g) { 
+g.drawString(msg,x,y); }
+}
+/*<html>
+<head>
+<applet code="MouseEvents", width=400 height=400></applet>
+</head>
+</html>*/
